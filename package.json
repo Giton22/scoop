@@ -1,39 +1,54 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
-  "name": "scoop-ray",
-  "title": "Raycast Scoop Extension",
-  "description": "Extension for scoop package manager",
+  "name": "scoop",
+  "title": "Scoop",
+  "description": "Manage Scoop, the command-line installer for Windows.",
   "icon": "scoop.png",
   "author": "zsombor_biro",
   "license": "MIT",
+  "categories": [
+    "Developer Tools",
+    "System"
+  ],
+  "keywords": [
+    "scoop",
+    "windows",
+    "package manager",
+    "installer"
+  ],
   "commands": [
     {
       "name": "installed",
       "title": "Show Installed",
+      "subtitle": "Scoop",
       "description": "List installed Scoop Packages",
       "mode": "view"
     },
     {
       "name": "search",
-      "title": "Search",
+      "title": "Search Packages",
+      "subtitle": "Scoop",
       "description": "Search and Install Packages from Scoop",
       "mode": "view"
     },
     {
       "name": "outdated",
       "title": "Show Outdated",
+      "subtitle": "Scoop",
       "description": "List and Update Outdated Scoop Packages",
       "mode": "view"
     },
-     {
+    {
       "name": "list-buckets",
       "title": "List Buckets",
+      "subtitle": "Scoop",
       "description": "List all installed Scoop buckets",
       "mode": "view"
     },
     {
       "name": "add-bucket",
       "title": "Add Bucket",
+      "subtitle": "Scoop",
       "description": "Add a new Scoop bucket",
       "mode": "view"
     }

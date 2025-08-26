@@ -1,4 +1,4 @@
-import { exec } from "child_process";
+import { exec, ExecException } from "child_process";
 import { promisify } from "util";
 
 const execp = promisify(exec);
@@ -86,8 +86,9 @@ export async function scoopSearch(query: string): Promise<ScoopPackage[]> {
       Source: parts[2],
       Binaries: parts[3] || "",
     }));
-  } catch (error) {
-    if (error instanceof Error && "stdout" in error && (error as any).stdout.includes("Couldn't find any packages")) {
+  } catch (e) {
+    const error = e as ExecException & { stdout: string; stderr: string };
+    if (error.stdout?.includes("Couldn't find any packages")) {
       return [];
     }
     console.error("Error searching for scoop packages:", error);
